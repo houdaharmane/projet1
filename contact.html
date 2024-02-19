@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-top: 30px; 
+        }
+        .search-icon {
+            color: #007bff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: 370px;
+            margin-top: -18px;
+            margin-bottom: 10px;
+        }
+        .nav-bar {
+            border-bottom: 1px solid #007bff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+        }
+    
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .navbar-nav a {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-right: 20px; 
+        }    
+    
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            margin-top: 0;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            line-height: 1.5;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column; /* Permet au footer d'être en bas */
+        }
+        *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        }
+        .container{
+        max-width: 1170px;
+        margin:auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        }
+        .row{
+        display: flex;
+        flex-wrap: wrap;
+        }
+        ul{
+        list-style: none;
+        }
+        .footer{
+        background-color: black;
+        padding: 70px 0;
+        margin-top: 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 50px; 
+        }
+        .footer-col{
+        width: 25%;
+        padding: 0 15px;
+        }
+        .footer-col h4{
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+        }
+        .footer-col h4::before{
+        content: '';
+        position: absolute;
+        left:0;
+        bottom: -10px;
+        background-color: #007bff;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+        }
+        .footer-col ul li:not(:last-child){
+        margin-bottom: 10px;
+        }
+        .footer-col ul li a{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+        color: #ffffff;
+        padding-left: 8px;
+        }
+        .footer-col .social-links a{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255,255,255,0.2);
+        margin:0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover{
+        color: #24262b;
+        background-color: #ffffff;
+        }
+        
+        /*responsive*/
+        @media(max-width: 767px){
+        .footer-col{
+        width: 50%;
+        margin-bottom: 40px;
+        }
+        }
+        @media(max-width: 574px){
+        .footer-col{
+        width: 100%;
+        }
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+
+           button, input {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            margin-bottom: 20px;
+            width: 100px;
+          }
+          
+          .background {
+            display: flex;
+            min-height: 100vh;
+          }
+          
+          .container {
+            flex: 0 1 700px;
+            margin: auto;
+            padding: 10px;
+          }
+          
+          .screen {
+            position: relative;
+            width: 900px;
+            background: #3e3e3e;
+            border-radius: 15px;
+          }
+          
+          .screen:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            bottom: 0;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+            z-index: -1;
+          }
+          
+          .screen-header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: #4d4d4f;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+          }
+          
+          .screen-header-left {
+            margin-right: auto;
+          }
+          
+          .screen-header-button {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-right: 3px;
+            border-radius: 8px;
+            background: white;
+          }
+          
+          .screen-header-button.close {
+            background: #007bff;
+          }
+          
+          .screen-header-button.maximize {
+            background: #e8e925;
+          }
+          
+          .screen-header-button.minimize {
+            background: #74c54f;
+          }
+          
+          .screen-header-right {
+            display: flex;
+          }
+          
+          .screen-header-ellipsis {
+            width: 3px;
+            height: 3px;
+            margin-left: 2px;
+            border-radius: 8px;
+            background: #999;
+          }
+          
+          .screen-body {
+            display: flex;
+          }
+          
+          .screen-body-item {
+            flex: 1;
+            padding: 50px;
+          }
+          
+          .screen-body-item.left {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .app-title {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            color: #007bff;
+            font-size: 26px;
+          }
+          
+          .app-title:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 25px;
+            height: 4px;
+            background: #007bff;
+          }
+          
+          .app-contact {
+            margin-top: auto;
+            font-size: 8px;
+            color: #888;
+          }
+          
+          .app-form-group {
+            margin-bottom: 15px;
+          }
+          
+          .app-form-group.message {
+            margin-top: 40px;
+          }
+          
+          .app-form-group.buttons {
+            margin-bottom: 0;
+            text-align: right;
+          }
+          
+          .app-form-control {
+            width: 100%;
+            padding: 10px 0;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #666;
+            color: #ddd;
+            font-size: 14px;
+            text-transform: uppercase;
+            outline: none;
+            transition: border-color .2s;
+          }
+          
+          .app-form-control::placeholder {
+            color: #666;
+          }
+          
+          .app-form-control:focus {
+            border-bottom-color: #ddd;
+          }
+          
+          .app-form-button {
+            background: none;
+            border: none;
+            color: #007bff;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+          }
+          
+          .app-form-button:hover {
+            color: #007bff;
+          }
+          body {
+            background-color:#f5f5f5;
+        }
+        
+        .statContainer {
+          margin:auto;
+          width:960px;
+        
+        }
+        
+        .statRedirect {
+          color:#06f;
+          font-family:'segoe ui light',arial;
+          font-size:14px;
+          display: inline-block;
+          overflow: hidden;
+        
+          vertical-align: top;
+        
+          -webkit-perspective: 600px;
+          -moz-perspective: 600px;
+          -ms-perspective: 600px;
+          perspective: 600px;
+        
+          -webkit-perspective-origin: 50% 50%;
+          -moz-perspective-origin: 50% 50%;
+          -ms-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+        }
+        
+        .statRedirect span {
+          display: block;
+          position: relative;
+          padding: 2px 8px;
+        
+          -webkit-transition: all 400ms ease;
+          -moz-transition: all 400ms ease;
+          -ms-transition: all 400ms ease;
+          transition: all 400ms ease;
+        
+          -webkit-transform-origin: 50% 0%;
+          -moz-transform-origin: 50% 0%;
+          -ms-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+        
+          -webkit-transform-style: preserve-3d;
+          -moz-transform-style: preserve-3d;
+          -ms-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+        }
+        
+        .statBubbleContainer:hover > .statRedirect span {
+          background: #00929c;
+        
+          -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+          -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+          -ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+          transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+        }
+        
+        .statRedirect span:after {
+          content: attr(data-title);
+        
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          padding: 2px 8px;
+        
+          color: #fff;
+          background: #0e76bc;
+        
+          -webkit-transform-origin: 50% 0%;
+          -moz-transform-origin: 50% 0%;
+          -ms-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+        
+          -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+          -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+          -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+          transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+        }
+        
+        .statBubbleContainer:hover > .statRedirect {
+          text-decoration:none;
+        }
+        
+        .underline {
+          text-decoration:underline;
+        }
+        
+        .statBubbleContainer {
+            width:163px;
+            height:250px;
+            position:relative;
+            cursor:pointer;
+            text-align:center;
+            margin:auto;
+            margin-top:50px;
+            display:inline-block;
+            margin-left:36px;
+            margin-right:36px;
+        }
+        
+        .nounderline {
+          text-decoration:none;
+        }
+        
+        .statBubbleContainer h3 {
+          font-family:'segoe ui bold',arial;
+          font-size:14px;
+          color:#828282;
+          -webkit-transition:all 0.3s ease-in-out;
+          -ms-transition:all 0.3s ease-in-out;
+          -moz-transition:all 0.3s ease-in-out;
+          -o-transition:all 0.3s ease-in-out;
+          -apple-transition:all 0.3s ease-in-out;
+          transition:all 0.3s ease-in-out;
+        }
+        
+        .statBubbleContainer:hover > h3 {
+          color:#0e76bc;  
+        }
+        
+        .statBubbleContainer:hover > .statBubble {
+          border:6px solid #0e76bc;
+          background-position:center -140px;
+        }
+        
+        .statBubbleContainer:hover .statNum {
+          color:#2b2b2b;
+        }
+        
+        .websitesLaunched {
+          background-image:url('http://dizin.x10.bz/codepen/Cbxst/screen.png');  
+        }
+        
+        .teamSize {
+          background-image:url('http://dizin.x10.bz/codepen/Cbxst/person.png');
+        }
+        
+        .topSEORank {
+          background-image:url('http://dizin.x10.bz/codepen/Cbxst/search.png');
+        }
+        
+        .facebookLikes {
+          background-image:url('http://dizin.x10.bz/codepen/Cbxst/likes.png');
+        }
+        
+        .statBubble {
+          margin:auto;
+          width:150px;
+          height:150px;
+          border-radius:100%;
+          border:6px solid #ddd;
+          background-repeat:no-repeat;
+          background-position:center 25px;
+          position:relative;
+          text-align:center;
+          -webkit-transition:all 0.3s ease-in-out;
+          -ms-transition:all 0.3s ease-in-out;
+          -moz-transition:all 0.3s ease-in-out;
+          -o-transition:all 0.3s ease-in-out;
+          -apple-transition:all 0.3s ease-in-out;
+          transition:all 0.3s ease-in-out;
+        }
+        
+        .statNum {
+          position:absolute;
+          font-family:'segoe ui light',arial;
+          left:0;
+          right:0;
+          margin:auto;
+          line-height:150px;
+          vertical-align:middle;
+          font-size:40px;
+          color:#828282;
+           -webkit-transition:all 0.3s ease-in-out;
+          -ms-transition:all 0.3s ease-in-out;
+          -moz-transition:all 0.3s ease-in-out;
+          -o-transition:all 0.3s ease-in-out;
+          -apple-transition:all 0.3s ease-in-out;
+          transition:all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar bg-transparent">
+        <h1 class="m-0 text-primary" style="margin-left:20px; font-weight: bold; font-size: 3rem;color:#007bff;">Faites Un Don</h1>
+        <div class="navbar">
+            <div class="navbar-nav">
+              <a href="/" class="nav-item nav-link active">Acceuil</a>
+                <a href="about.html" class="nav-item nav-link active">À propos</a>
+                <a href="donation.html" class="nav-item nav-link active">Don</a>
+                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                <a href="Our team.html" class="nav-item nav-link active">Facture</a>
+            </div>
+        </div>
+    </div>
+    <h1>ENTRER EN CONTACT!!</h1>
+    <p>Tout cela signifie que donner est un élément de bonheur bien plus important que recevoir.<br> Être capable de donner nous donne le sentiment d’avoir un impact important sur la vie de quelqu’un.</p>
+    <div class="background">
+        <div class="container">
+          <div class="screen">
+            <div class="screen-header">
+              <div class="screen-header-left">
+                <div class="screen-header-button close"></div>
+                <div class="screen-header-button maximize"></div>
+                <div class="screen-header-button minimize"></div>
+              </div>
+              <div class="screen-header-right">
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="screen-body-item left">
+                <div class="app-title">
+                  <span>CONTACTEZ</span>
+                  <span>NOUS</span>
+                </div>
+                <div class="app-contact">INFORMATIONS DE CONTACT: donationclub199@gmail.com</div>
+              </div>
+              <div class="screen-body-item">
+                <div class="app-form">
+                  <form class="app-form" action="/envoyer_donnees" method="POST" id="monFormulaire">
+                    <div class="app-form-group">
+                        <input class="app-form-control" placeholder="NOM" name="name">
+                    </div>
+                    <div class="app-form-group">
+                        <input class="app-form-control" placeholder="EMAIL" name="email">
+                    </div>
+                    <div class="app-form-group">
+                        <input class="app-form-control" placeholder="NUMERO DE TELEPHONE" name="number">
+                    </div>
+                    <div class="app-form-group message">
+                        <input class="app-form-control" placeholder="MESSAGE" name="message">
+                    </div>
+                  <div class="app-form-group buttons">
+                    <div class="app-form-group buttons">
+                      <button type="button" class="app-form-button" onclick="annulerAction()">ANNULER</button>
+                      <button type="submit" class="app-form-button">ENVOYER</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="statContainer">
+      <a class="nounderline" href="javascript:alert('Portfolio Link here!');" title="Web Development Services">
+      <div class="statBubbleContainer">
+      <div class="statBubble websitesLaunched">
+        <div class="statNum">
+        50+
+        </div>
+      </div>
+        <h3>Sites Web lancés</h3>
+        <div class="statRedirect"><span data-title="portfolio &rarr;">portefeuille &rarr;</span> </div>
+      </div>
+      </a> 
+      <a class="nounderline" href="javascript:alert('Meet the team Link here!');" title="Meet our developers">
+      <div class="statBubbleContainer">
+      <div class="statBubble teamSize">
+        <div class="statNum">
+        3
+        </div>
+      </div>
+        <h3>Team Members</h3>
+        <div class="statRedirect"><span data-title="meet us &rarr;">rencontre nous &rarr;</span> </div>
+      </div>
+      </a>
+        
+        <a class="nounderline" href="javascript:alert('Services Page Here');" title="Learn about our services">
+      <div class="statBubbleContainer">
+      <div class="statBubble topSEORank">
+        <div class="statNum">
+      #1
+        </div>
+      </div>
+        <h3>Meilleur classement </h3>
+        <div class="statRedirect"><span data-title="services &rarr;">prestations de service &rarr;</span> </div>
+      </div>
+      </a>
+        
+        <a class="nounderline" target="_blank" href="https://www.facebook.com/BoiseDigital/" title="Get Connected with us!">
+      <div class="statBubbleContainer">
+      <div class="statBubble facebookLikes">
+        <div class="statNum">
+        132
+        </div>
+      </div>
+        <h3>Aimés de Facebook</h3>
+        <div class="statRedirect"><span data-title="social media &rarr;">réseaux sociaux &rarr;</span> </div>
+      </div>
+      </a>
+      
+      </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Accueil</h4>
+                    <ul>
+                      <li><a href="acceuil.html">Derniers évènements</a></li>
+                      <li><a href="acceuil.html">Statistiques</a></li>
+                      <li><a href="acceuil.html">Témoignages</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>À Propos</h4>
+                    <ul>
+                      <li><a href="about.html">À propos de nous</a></li>
+                      <li><a href="about.html">Statistiques</li>
+                      <li><a href="about.html">Nos services</a></li>
+                      <li><a href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Don</h4>
+                    <ul>
+                      <li><a href="donation.html">formulaire</a></li>
+                      <li><a href="donation.html"></a></li>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="social-links">
+                      <a href="contact.html"><i class="fab fa-facebook-f"></i></a>
+                      <a href="contact.html"><i class="fab fa-twitter"></i></a>
+                      <a href="contact.html"><i class="fab fa-instagram"></i></a>
+                      <a href="contact.html"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+   <script>
+    function annulerAction() {
+      // Obtenez une référence au formulaire
+      var formulaire = document.getElementById("monFormulaire");
+
+      // Réinitialisez le formulaire en le remplaçant par un nouveau clonage
+      formulaire.reset();
+  }
+
+  function envoyerAction() {
+      alert("ENVOYER effectuée !");
+  }
+
+  function validateForm() {
+      var numero_telephone = document.getElementById('number').value;
+
+      // Vérifier si 'numero_telephone' est un nombre
+      if (isNaN(numero_telephone)) {
+          alert('Le numéro de téléphone doit être un nombre.');
+          return false; // Empêcher l'envoi du formulaire
+      }
+
+      return true; // Envoyer le formulaire si la validation réussit
+  }
+</script>
+</body>
+</html>
